@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Mar 12, 2024 at 09:37 PM
+-- Generation Time: Mar 18, 2024 at 06:35 PM
 -- Server version: 5.7.23-23
 -- PHP Version: 8.2.16
 
@@ -1047,7 +1047,19 @@ INSERT INTO `personal_access_tokens` (`id`, `tokenable_type`, `tokenable_id`, `n
 (80, 'App\\Models\\User', 3, 'authToken', '15aa21998facfec3efc458bfd58e92bf47d2f6513732d97e29c70b51f5298934', '[\"*\"]', NULL, NULL, '2024-03-12 13:04:18', '2024-03-12 13:04:18'),
 (81, 'App\\Models\\User', 30, 'authToken', '6c3935473731494e9566d86696dad958908db4bfa62a7eab410b9d4533664425', '[\"*\"]', NULL, NULL, '2024-03-12 13:17:40', '2024-03-12 13:17:40'),
 (82, 'App\\Models\\User', 2, 'authToken', '339c54badc94dc52de76e01fb37fda008cb6b53a985c557e43933cfea1752e6c', '[\"*\"]', NULL, NULL, '2024-03-12 16:01:10', '2024-03-12 16:01:10'),
-(83, 'App\\Models\\User', 3, 'authToken', 'e045670842ca97794c13e85082417aced6e1ea4632082c1e5bed84b6922e4bb7', '[\"*\"]', NULL, NULL, '2024-03-12 16:06:03', '2024-03-12 16:06:03');
+(83, 'App\\Models\\User', 3, 'authToken', 'e045670842ca97794c13e85082417aced6e1ea4632082c1e5bed84b6922e4bb7', '[\"*\"]', NULL, NULL, '2024-03-12 16:06:03', '2024-03-12 16:06:03'),
+(84, 'App\\Models\\User', 28, 'authToken', '416ddecdb4bf5f662f12152aaa8bba5c7081af596ff179fc8984cbfb46723c2d', '[\"*\"]', NULL, NULL, '2024-03-13 15:06:49', '2024-03-13 15:06:49'),
+(85, 'App\\Models\\User', 28, 'authToken', '0b9598f609f5f753f98358d49b88f9222d1423002112fe5ee048a04370fc253c', '[\"*\"]', NULL, NULL, '2024-03-13 15:08:37', '2024-03-13 15:08:37'),
+(86, 'App\\Models\\User', 2, 'authToken', '961585704e62ea4e28b2e9c9b9e7ddd3736543f9a42112da2242fd720446eef8', '[\"*\"]', NULL, NULL, '2024-03-14 06:00:21', '2024-03-14 06:00:21'),
+(87, 'App\\Models\\User', 2, 'authToken', '9b0effa3b5921f3f155df04df7aa2d163d28fd60c871f45f77e502ed9073edd8', '[\"*\"]', NULL, NULL, '2024-03-14 06:00:23', '2024-03-14 06:00:23'),
+(88, 'App\\Models\\User', 30, 'authToken', 'be2550305f1c323d084bec991db0b159a1eb4849af330f881e66ba042d1f8db5', '[\"*\"]', NULL, NULL, '2024-03-14 06:17:12', '2024-03-14 06:17:12'),
+(89, 'App\\Models\\User', 30, 'authToken', 'a736f6240060ec3f02ac828c7e4953a84e528d6088578757c582c35e2227bae8', '[\"*\"]', NULL, NULL, '2024-03-14 12:39:41', '2024-03-14 12:39:41'),
+(90, 'App\\Models\\User', 2, 'authToken', 'e1b87c580af889f20593eca71be003f66e6221f5ae931806e01a99eff0a6f32a', '[\"*\"]', NULL, NULL, '2024-03-14 16:07:57', '2024-03-14 16:07:57'),
+(91, 'App\\Models\\User', 2, 'authToken', '5368800780c9f684e007c38911e116baa55727956bb424bef4b391a1e849a5c8', '[\"*\"]', NULL, NULL, '2024-03-14 16:08:05', '2024-03-14 16:08:05'),
+(92, 'App\\Models\\User', 2, 'authToken', '02c1a1d7830780749816f9f159b63f19d02da4ff1e805b8ae511eb3541b3d904', '[\"*\"]', NULL, NULL, '2024-03-14 16:08:08', '2024-03-14 16:08:08'),
+(93, 'App\\Models\\User', 2, 'authToken', 'fd9b79b1d9b06ee756372c5b0da3d4fe2b14ffcfd5281186b2e506d467d6dfeb', '[\"*\"]', NULL, NULL, '2024-03-14 16:19:21', '2024-03-14 16:19:21'),
+(94, 'App\\Models\\User', 2, 'authToken', 'b513654cadd202917835b437050782fcae735c343e320637c809e78680ad69c9', '[\"*\"]', NULL, NULL, '2024-03-14 16:19:32', '2024-03-14 16:19:32'),
+(95, 'App\\Models\\User', 30, 'authToken', 'e0445123ff21bdb58c242119d17792c1e0fe34c176d832d5f217d845e3568633', '[\"*\"]', NULL, NULL, '2024-03-14 16:20:17', '2024-03-14 16:20:17');
 
 -- --------------------------------------------------------
 
@@ -5368,20 +5380,20 @@ INSERT INTO `teams` (`id`, `tournament_id`, `user_id`, `team_name`, `affiliation
 (8, '17', '16', '2381c065a0580', '2', 'white', 'any', 'uploads/ITiC0szaBWMtG0S3P1a14GWkBbyd1P2vVPGPOE1v.png', '', '2381c065a0580', '2381c065a0580f@cashbenties.com', '03000349300', 'stripe', 'pending', '2381c065a0580f@cashbenties.com', 'uploads/TZ43MomnRmr2Didiu8OzMdtdtOXj6PV6TXyLOBje.png', '2024-01-11 15:39:54', '2024-01-12 05:32:18', 'accepted'),
 (9, '19', '17', '299ab465a0593b', '2', 'black', 'any', 'uploads/cWlDCHi0neDZDkzaSs0vYcpaggHUYuQwAh7JzfgZ.png', '', '299ab465a0593b', '299ab465a0593b@crankymonkey.info', '03000349389', 'stripe', 'pending', '299ab465a0593b@crankymonkey.info', 'uploads/09dd9USrn6d9Qz1AARHw58obvQtzgYR3JjG2mIGs.png', '2024-01-11 15:44:25', '2024-01-12 05:32:35', 'accepted'),
 (10, '19', '10', 'cc952b65', '3', 'white & purple', 'ant', 'uploads/RwUHl8U40UknBmFuMn7vZ75EbE1bJLVHFjqi0xJR.png', '', 'cc952b65a04', 'cc952b65a04a4c@cashbenties.com', '03000349345', 'stripe', 'pending', 'cc952b65a04a4c@cashbenties.com', 'uploads/BeKGcRcFXugpmN2FkTCyouSaKKz8ZC4uWouhj7iL.png', '2024-01-11 15:51:35', '2024-01-12 05:32:47', 'accepted'),
-(11, '19', '26', 'tateret532', '3', 'red', 'sds', 'uploads/Punhg3xkkSTX6qXxAAr1eMDd8wPubWOLYIxTqFFb.png', '', 'tateret532', 'tateret532@cubene.com', '03001234567', 'stripe', 'pending', 'abidaa.rehman@gmail.com', 'uploads/Y8PVwrUwDlkl4ad7zn8x1K20AFwK4k3ekfDWQuyk.png', '2024-01-29 11:26:24', '2024-01-29 11:55:06', 'accepted'),
-(12, '19', '25', 'javitow959', '2', 'blue', 'sdf', 'uploads/uqolMlxPn7YQNWIy5S2g7JOlc9ygdnPreQAZXDLV.png', '', 'javitow959', 'javitow959@flexvio.com', '03221234567', 'stripe', 'pending', 'abidaa.rehman@gmail.com', 'uploads/NtUkfOJUXqeSzg6PYJx5yL2LX3BHPCUaRk7fjq24.png', '2024-01-29 11:33:15', '2024-01-29 11:55:40', 'accepted'),
-(13, '19', '3', 'asifaa.rehman', '3', 'blue', 'edee', 'uploads/wNeRutkJ067oc8SgquPlsRT5ziGCTCnEric3rOqT.png', '', 'asifaa.rehman', 'asifaa.rehman@gmail.com', '03001234567', 'stripe', 'pending', 'abidaa.rehman@gmail.com', 'uploads/Q360iqSO1qUD1xRjjGKHvb6iNLAr8dZyx3kHqXr1.png', '2024-01-29 11:39:19', '2024-01-29 11:55:46', 'accepted'),
-(14, '19', '26', 'xosob', '2', 'black', 'category', 'uploads/10HZi651BcYAfM2L0lBW8LfFccpeT7EqbWHWENmO.png', '', 'xosob', 'xosob93524@gosarlar.com', '03000349309', 'stripe', 'pending', 'xosob93524@gosarlar.com', 'uploads/O7TPvcAEdwmLSeotpe3c7aDf4xQSKPkdPX6xXYHt.png', '2024-01-29 11:39:33', '2024-01-29 11:55:54', 'accepted'),
-(15, '19', '26', 'xosob', '2', 'black', 'category', 'uploads/0X1nf9dPJsvWjTgUrZtVMyhK5CFRbv8hAULZfWWF.png', '', 'xosob', 'xosob93524@gosarlar.com', '03000349309', 'stripe', 'pending', 'xosob93524@gosarlar.com', 'uploads/Z6EOMIpyh6oN6I25ILj2dZkfqQZqhdUSNWLMaNyb.png', '2024-01-29 11:39:52', '2024-01-29 11:55:59', 'accepted'),
-(16, '19', '4', 'Ali Zia', '2', 'black', 'fefe', 'uploads/x8vROWNb2T2EeIBI9gyRSIyyLx7I8pUfJ75RqN20.png', '', 'Ali zia', 'ali.ziaa190@gmail.com', '+923001234567', 'stripe', 'pending', 'abidaa.rehman@gmail.com', 'uploads/oLUlta4E7BhPN65astyTcX5l8K3X0kS7fXV7dJmv.png', '2024-01-29 11:42:02', '2024-01-29 11:56:06', 'accepted'),
-(17, '19', '5', 'wevos13165', '3', 'red', 'dfd', 'uploads/twiuIoWpaVTT1f4usqUM2d5pB3Nf5XaA8PDlf5Cd.png', '', 'wevos13165', 'wevos13165@regapts.com', '03001234567', 'stripe', 'pending', 'abidaa.rehman@gmail.com', 'uploads/XcdQuc528bf0PHkFndCu4hh6tPsImwddM7UKD4ps.png', '2024-01-29 11:44:32', '2024-01-29 11:56:13', 'accepted'),
-(18, '19', '22', 'gocite', '2', 'pink', 'hjbsfdsk', 'uploads/hlEtWQpkHMARMXBik7WqXAnZ7mTUZUwLuMdHovXu.webp', '', 'gocite', 'gocite2672@gosarlar.com', '03000349307', 'stripe', 'pending', 'gocite2672@gosarlar.com', 'uploads/SKKuLTcfMTKRgb4d00CcWFXfTfTyMxQANtWsthBi.png', '2024-01-29 11:46:04', '2024-01-29 11:56:21', 'accepted'),
-(19, '19', '10', 'cc952b65a04a4c', '4', 'orange', 'dded', 'uploads/HRuR1JoLS0BEpwdMUiSJi2QWz35EpcqUmHR724wl.png', '', 'cc952b65a04a4c', 'cc952b65a04a4c@cashbenties.com', '03001234567', 'stripe', 'pending', 'abidaa.rehman@gmail.com', 'uploads/D3xGkT9IuRQJq5sklhGRi8ogV3vn62SjkeqIQL9V.png', '2024-01-29 11:47:31', '2024-01-29 11:56:27', 'accepted'),
-(20, '19', '21', 'pijoka', '2', 'white', 'sbdska', 'uploads/wyvFvhKmRFKl57fh7PM0Id22zD9enaIPrJHe0CEH.png', '', 'pijoka', 'pijoka2804@flexvio.com', '0300 1234567', 'stripe', 'pending', 'pijoka2804@flexvio.com', 'uploads/CCD0MjdwFLJE0kMUyc6Zf4Rcnhbx1qiny7A3Gp3u.png', '2024-01-29 11:52:53', '2024-01-29 11:56:33', 'accepted'),
-(21, '19', '20', 'vipirem', '2', 'white', 'mnsbcds', 'uploads/4Oaz0bA7RUKq8Hl4MqSMutFgMMx8Y6nNiLuQqk6U.png', '', 'vipire', 'vipirem320@cubene.com', '03000349307', 'stripe', 'pending', 'vipirem320@cubene.com', 'uploads/spSHYgl0q17sHNw9Jc2pCt7ufVfgKHvCpQQwvKDP.png', '2024-01-29 11:55:20', '2024-01-29 11:56:41', 'accepted'),
-(22, '19', '19', 'rowoh', '2', 'blue', 'jsdasa', 'uploads/eHtgqk9CIfEp4ibBECjcJEXQ1MJvvOKO2Yqcaydb.png', '', 'rowoh', 'rowoh65813@flexvio.com', '03000349307', 'stripe', 'pending', 'rowoh65813@flexvio.com', 'uploads/tqadHSjam1XHBmie4KYFXLWBzzdYIeId6kUSo9SB.png', '2024-01-29 11:57:42', '2024-01-29 11:58:33', 'accepted'),
-(23, '19', '17', '299ab46', '3', 'yellow', 'mnska', 'uploads/QlvzxpV3E9AsMi89rrTSHcuialmLVPXAra7eFGjB.png', '', 'crankymonkey', '299ab465a0593b@crankymonkey.info', '03000349307', 'stripe', 'pending', '299ab465a0593b@crankymonkey.info', 'uploads/0acIOGied4Gzj3FK8SQwzf4t1R26qd6XTtIGleFb.png', '2024-01-29 12:02:11', '2024-01-29 12:10:38', 'accepted'),
-(24, '19', '27', 'cashbentie', '2', 'yellow', 'kjdhka', 'uploads/JfOFZvQcf64YreSfdJnm2kpUDVQHhhKkEomWGkwB.png', '', 'cashbenties', '177e8465b7a157@cashbenties.com', '03000349376', 'stripe', 'pending', '177e8465b7a157@cashbenties.com', 'uploads/Y2f8DOUyx8Z1VswgjhRb3hU9LGNZpCsheDxdtuEE.png', '2024-01-29 12:16:20', '2024-01-29 12:16:59', 'accepted'),
+(11, '50', '26', 'tateret532', '3', 'red', 'sds', 'uploads/Punhg3xkkSTX6qXxAAr1eMDd8wPubWOLYIxTqFFb.png', '', 'tateret532', 'tateret532@cubene.com', '03001234567', 'stripe', 'pending', 'abidaa.rehman@gmail.com', 'uploads/Y8PVwrUwDlkl4ad7zn8x1K20AFwK4k3ekfDWQuyk.png', '2024-01-29 11:26:24', '2024-01-29 11:55:06', 'accepted'),
+(12, '50', '25', 'javitow959', '2', 'blue', 'sdf', 'uploads/uqolMlxPn7YQNWIy5S2g7JOlc9ygdnPreQAZXDLV.png', '', 'javitow959', 'javitow959@flexvio.com', '03221234567', 'stripe', 'pending', 'abidaa.rehman@gmail.com', 'uploads/NtUkfOJUXqeSzg6PYJx5yL2LX3BHPCUaRk7fjq24.png', '2024-01-29 11:33:15', '2024-01-29 11:55:40', 'accepted'),
+(13, '50', '3', 'asifaa.rehman', '3', 'blue', 'edee', 'uploads/wNeRutkJ067oc8SgquPlsRT5ziGCTCnEric3rOqT.png', '', 'asifaa.rehman', 'asifaa.rehman@gmail.com', '03001234567', 'stripe', 'pending', 'abidaa.rehman@gmail.com', 'uploads/Q360iqSO1qUD1xRjjGKHvb6iNLAr8dZyx3kHqXr1.png', '2024-01-29 11:39:19', '2024-01-29 11:55:46', 'accepted'),
+(14, '50', '26', 'xosob', '2', 'black', 'category', 'uploads/10HZi651BcYAfM2L0lBW8LfFccpeT7EqbWHWENmO.png', '', 'xosob', 'xosob93524@gosarlar.com', '03000349309', 'stripe', 'pending', 'xosob93524@gosarlar.com', 'uploads/O7TPvcAEdwmLSeotpe3c7aDf4xQSKPkdPX6xXYHt.png', '2024-01-29 11:39:33', '2024-01-29 11:55:54', 'accepted'),
+(15, '50', '26', 'xosob', '2', 'black', 'category', 'uploads/0X1nf9dPJsvWjTgUrZtVMyhK5CFRbv8hAULZfWWF.png', '', 'xosob', 'xosob93524@gosarlar.com', '03000349309', 'stripe', 'pending', 'xosob93524@gosarlar.com', 'uploads/Z6EOMIpyh6oN6I25ILj2dZkfqQZqhdUSNWLMaNyb.png', '2024-01-29 11:39:52', '2024-01-29 11:55:59', 'accepted'),
+(16, '50', '4', 'Ali Zia', '2', 'black', 'fefe', 'uploads/x8vROWNb2T2EeIBI9gyRSIyyLx7I8pUfJ75RqN20.png', '', 'Ali zia', 'ali.ziaa190@gmail.com', '+923001234567', 'stripe', 'pending', 'abidaa.rehman@gmail.com', 'uploads/oLUlta4E7BhPN65astyTcX5l8K3X0kS7fXV7dJmv.png', '2024-01-29 11:42:02', '2024-01-29 11:56:06', 'accepted'),
+(17, '50', '5', 'wevos13165', '3', 'red', 'dfd', 'uploads/twiuIoWpaVTT1f4usqUM2d5pB3Nf5XaA8PDlf5Cd.png', '', 'wevos13165', 'wevos13165@regapts.com', '03001234567', 'stripe', 'pending', 'abidaa.rehman@gmail.com', 'uploads/XcdQuc528bf0PHkFndCu4hh6tPsImwddM7UKD4ps.png', '2024-01-29 11:44:32', '2024-01-29 11:56:13', 'accepted'),
+(18, '50', '22', 'gocite', '2', 'pink', 'hjbsfdsk', 'uploads/hlEtWQpkHMARMXBik7WqXAnZ7mTUZUwLuMdHovXu.webp', '', 'gocite', 'gocite2672@gosarlar.com', '03000349307', 'stripe', 'pending', 'gocite2672@gosarlar.com', 'uploads/SKKuLTcfMTKRgb4d00CcWFXfTfTyMxQANtWsthBi.png', '2024-01-29 11:46:04', '2024-01-29 11:56:21', 'accepted'),
+(19, '50', '10', 'cc952b65a04a4c', '4', 'orange', 'dded', 'uploads/HRuR1JoLS0BEpwdMUiSJi2QWz35EpcqUmHR724wl.png', '', 'cc952b65a04a4c', 'cc952b65a04a4c@cashbenties.com', '03001234567', 'stripe', 'pending', 'abidaa.rehman@gmail.com', 'uploads/D3xGkT9IuRQJq5sklhGRi8ogV3vn62SjkeqIQL9V.png', '2024-01-29 11:47:31', '2024-01-29 11:56:27', 'accepted'),
+(20, '50', '21', 'pijoka', '2', 'white', 'sbdska', 'uploads/wyvFvhKmRFKl57fh7PM0Id22zD9enaIPrJHe0CEH.png', '', 'pijoka', 'pijoka2804@flexvio.com', '0300 1234567', 'stripe', 'pending', 'pijoka2804@flexvio.com', 'uploads/CCD0MjdwFLJE0kMUyc6Zf4Rcnhbx1qiny7A3Gp3u.png', '2024-01-29 11:52:53', '2024-01-29 11:56:33', 'accepted'),
+(21, '50', '20', 'vipirem', '2', 'white', 'mnsbcds', 'uploads/4Oaz0bA7RUKq8Hl4MqSMutFgMMx8Y6nNiLuQqk6U.png', '', 'vipire', 'vipirem320@cubene.com', '03000349307', 'stripe', 'pending', 'vipirem320@cubene.com', 'uploads/spSHYgl0q17sHNw9Jc2pCt7ufVfgKHvCpQQwvKDP.png', '2024-01-29 11:55:20', '2024-01-29 11:56:41', 'accepted'),
+(22, '50', '19', 'rowoh', '2', 'blue', 'jsdasa', 'uploads/eHtgqk9CIfEp4ibBECjcJEXQ1MJvvOKO2Yqcaydb.png', '', 'rowoh', 'rowoh65813@flexvio.com', '03000349307', 'stripe', 'pending', 'rowoh65813@flexvio.com', 'uploads/tqadHSjam1XHBmie4KYFXLWBzzdYIeId6kUSo9SB.png', '2024-01-29 11:57:42', '2024-01-29 11:58:33', 'accepted'),
+(23, '50', '17', '299ab46', '3', 'yellow', 'mnska', 'uploads/QlvzxpV3E9AsMi89rrTSHcuialmLVPXAra7eFGjB.png', '', 'crankymonkey', '299ab465a0593b@crankymonkey.info', '03000349307', 'stripe', 'pending', '299ab465a0593b@crankymonkey.info', 'uploads/0acIOGied4Gzj3FK8SQwzf4t1R26qd6XTtIGleFb.png', '2024-01-29 12:02:11', '2024-01-29 12:10:38', 'accepted'),
+(24, '50', '27', 'cashbentie', '2', 'yellow', 'kjdhka', 'uploads/JfOFZvQcf64YreSfdJnm2kpUDVQHhhKkEomWGkwB.png', '', 'cashbenties', '177e8465b7a157@cashbenties.com', '03000349376', 'stripe', 'pending', '177e8465b7a157@cashbenties.com', 'uploads/Y2f8DOUyx8Z1VswgjhRb3hU9LGNZpCsheDxdtuEE.png', '2024-01-29 12:16:20', '2024-01-29 12:16:59', 'accepted'),
 (25, '21', '3', 'Asifoz', '2', 'green', 'dfdf', 'uploads/wvWleKDNCMnffphtMCW1tWu3zxlZ8O8rkjOTIbns.png', '', 'Asifa Rehman', 'asifaa.rehman@gmail.com', '03001234567', 'stripe', 'pending', 'abidaa.rehman@gmail.com', 'uploads/PyWlFTtE6LluFvzoDkTRwlxm6icFni7BMzBmSXke.png', '2024-02-01 12:03:50', '2024-02-01 12:31:25', 'accepted'),
 (26, '21', '4', 'Zia team', '3', 'purple', 'dfe', 'uploads/5Lz4LTOUz5WswgLSTJ9oEYvWay79ivmQesWINjfc.png', '', 'Ali Zia', 'ali.ziaa190@gmail.com', '03001234567', 'stripe', 'pending', 'abidaa.rehman@gmail.com', 'uploads/5PmC5U8g6c11lzALX9rIaeSlkQUfJ8afrfOr6gJb.jpg', '2024-02-01 12:06:20', '2024-02-01 12:31:32', 'accepted'),
 (27, '21', '27', 'cashbenties', '2', 'yellow', 'dfggf', 'uploads/uJiZ9jliLqyedoRfPWNizakvFEgfGotg89GVcpTX.png', '', 'cashbenties', '177e8465b7a157@cashbenties.com', '1122334455', 'stripe', 'pending', 'abidaa.rehman@gmail.com', 'uploads/Et1VwBmEJagosf5dlhhSlPAxh6IkKIVR44mRmyJZ.png', '2024-02-01 12:09:45', '2024-02-01 12:31:40', 'accepted'),
@@ -5559,7 +5571,8 @@ INSERT INTO `tournaments` (`id`, `user_id`, `title`, `slug`, `category_id`, `typ
 (44, '28', 'bla bla', NULL, '1', '1', '2024-03-11', '2024-03-12', '2024-03-11', '1', '155', 'Rotterdam', '3038sx', 'hofplein 11', NULL, NULL, '8', NULL, NULL, '2', '100', NULL, NULL, '20', 'nothing', '2024-03-11', '00:00', '01', 'yo', '2024-03-11', '00:00', '01', '0', '2024-03-11', '00:00', '01', 'no', '2024-03-11', '00:00', '1', 'yo', NULL, NULL, NULL, 'yo', '1', '0', '0', NULL, '2024-03-09', 0, '2024-03-09 13:22:12', '2024-03-09 13:22:12', NULL, NULL, NULL, NULL, NULL, 'no', 'no', NULL),
 (46, '30', 'testing herosolutions ab', NULL, '1', '2', '2024-03-15', '2024-10-25', '2024-03-12', '1', '5', 'California', '15417', 'Block 2 phase', NULL, NULL, '8', NULL, NULL, '1', '120', 'dwdw', 'dwdw', '12', '10', NULL, '00:00', '0', NULL, NULL, '00:00', '0', NULL, NULL, '00:00', '0', NULL, NULL, '00:00', '0', NULL, NULL, NULL, NULL, 'dwdw', '1', '0', '0', NULL, '2024-03-10', 0, '2024-03-12 13:53:47', '2024-03-12 14:24:15', NULL, NULL, NULL, NULL, NULL, 'no', 'dwdw', NULL),
 (47, '30', 'tournament new test', NULL, '1', '2', '2024-03-15', '2024-10-26', '2024-03-11', '1', '3', 'Adamsville', '1008 DG', 'DG Amsterdam', NULL, NULL, '8', NULL, NULL, '2', '125', 'dwd', 'dwd', '12', 'dcds', NULL, '00:00', '0', NULL, NULL, '00:00', '0', NULL, NULL, '00:00', '0', NULL, NULL, '00:00', '0', NULL, NULL, NULL, NULL, 'dwdw', '1', '0', '0', NULL, '2024-03-07', 0, '2024-03-12 14:32:25', '2024-03-12 14:32:25', NULL, NULL, NULL, NULL, NULL, 'no', 'dsdwdwdw', 'uploads/KEgJgHOC9eIxvIF7eiINr75egBbLvgDN0dk5AVzu.jpg'),
-(48, '2', 'fsfs', NULL, '2', '2', '2024-03-14', '2024-08-31', '2024-03-11', '1', '6', 'Adamsville', '1008 DG', 'DG Amsterdam', NULL, NULL, '1008', NULL, NULL, '2', '45', 'fdfd', 'dfd', '34', 'dgd', '2024-03-23', '00:00', '2', 'wfwssf', NULL, '00:00', '0', NULL, NULL, '00:00', '0', NULL, NULL, '00:00', '0', NULL, NULL, NULL, NULL, 'dfdfd', '1', '0', '0', NULL, '2024-03-06', 0, '2024-03-12 16:04:36', '2024-03-12 16:05:00', NULL, NULL, NULL, NULL, NULL, 'no', 'sfsfs', NULL);
+(48, '2', 'fsfs', NULL, '2', '2', '2024-03-14', '2024-08-31', '2024-03-11', '1', '6', 'Adamsville', '1008 DG', 'DG Amsterdam', NULL, NULL, '1008', NULL, NULL, '2', '45', 'fdfd', 'dfd', '34', 'dgd', '2024-03-23', '00:00', '2', 'wfwssf', NULL, '00:00', '0', NULL, NULL, '00:00', '0', NULL, NULL, '00:00', '0', NULL, NULL, NULL, NULL, 'dfdfd', '1', '0', '0', NULL, '2024-03-06', 0, '2024-03-12 16:04:36', '2024-03-12 16:05:00', NULL, NULL, NULL, NULL, NULL, 'no', 'sfsfs', NULL),
+(50, '30', 'Hero solutions tournament', NULL, '1', '2', '2024-04-06', '2025-02-01', '2024-03-20', '1', '5', 'Sargodha', '40100', 'BLOBK', NULL, NULL, '14', NULL, NULL, '1', '21', 'dwdw', 'dwdw', '12', 'dwdw', NULL, '00:00', '0', NULL, NULL, NULL, '0', NULL, NULL, NULL, '0', NULL, NULL, NULL, '0', NULL, NULL, NULL, NULL, 'wdwd', '1', '0', '0', NULL, '2024-03-16', 1, '2024-03-14 14:40:03', '2024-03-14 16:33:02', 'single', '24,13,20,15,22,23,16,17', '18,11,21,19,12,14', NULL, '', 'no', 'dwdw', NULL);
 
 -- --------------------------------------------------------
 
@@ -5738,7 +5751,10 @@ INSERT INTO `tournament_images` (`id`, `tournament_id`, `image`, `caption`, `is_
 (215, 47, 'uploads/2n2DyYNwYEqdTaXzNYWwFHDDqUlD9N7Bw2Ou241K.jpg', 'banner', 0, 1, 0, '2024-03-12 14:32:25', '2024-03-12 14:32:25'),
 (216, 47, 'uploads/spvEL4esycIbp9zsGKiPevDx2Mm2hxYHnmJ9nCDN.jpg', 'banner', 0, 1, 0, '2024-03-12 14:32:25', '2024-03-12 14:32:25'),
 (219, 48, 'uploads/Z0VjEXjcNGHdVzF86R71WVoorXTgyA2Ywlp3752y.jpg', 'banner', 0, 1, 0, NULL, NULL),
-(220, 48, 'uploads/0VmAfyjfwEvz4WYtzcfqxnXjn8niUfMncC5G9LC6.jpg', 'banner', 0, 1, 0, NULL, NULL);
+(220, 48, 'uploads/0VmAfyjfwEvz4WYtzcfqxnXjn8niUfMncC5G9LC6.jpg', 'banner', 0, 1, 0, NULL, NULL),
+(242, 50, 'uploads/NyeqA6ZpYypxGRWGYBEaFJ2inNOaDijExF5uMwGc.jpg', 'banner', 0, 1, 0, NULL, NULL),
+(243, 50, 'uploads/Lo6twpvUZgf5sjSPQa8ALhvX8hoGXYhY7A9f3tQh.jpg', 'banner', 0, 1, 0, NULL, NULL),
+(244, 50, 'uploads/qzOsBLOGwZAdO0PIIEflKQHc7sM3FibRWYfEMBzK.jpg', 'banner', 0, 1, 0, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -5828,7 +5844,59 @@ INSERT INTO `tournament_matches` (`id`, `round_id`, `team1`, `team2`, `winner`, 
 (41, 13, 31, 28, 28, 31, 110, 190, 1, '2024-02-02 09:35:44', '2024-02-02 04:05:44', 42),
 (42, 14, 26, 28, 26, 28, 190, 170, 1, '2024-02-02 09:51:05', '2024-02-02 04:21:05', 44),
 (43, 14, 30, 25, 25, 30, 110, 120, 1, '2024-02-02 09:51:05', '2024-02-02 04:21:05', 44),
-(44, 15, 26, 25, 26, 25, 180, 150, 1, '2024-02-02 09:51:30', '2024-02-02 04:21:30', 0);
+(44, 15, 26, 25, 26, 25, 180, 150, 1, '2024-02-02 09:51:30', '2024-02-02 04:21:30', 0),
+(45, 16, 13, 24, 0, 0, 0, 0, 0, '2024-03-14 21:50:57', '2024-03-14 16:20:57', 54),
+(46, 16, 23, 20, 0, 0, 0, 0, 0, '2024-03-14 21:50:57', '2024-03-14 16:20:57', 51),
+(47, 16, 22, 12, 0, 0, 0, 0, 0, '2024-03-14 21:50:57', '2024-03-14 16:20:57', 52),
+(48, 16, 16, 18, 0, 0, 0, 0, 0, '2024-03-14 21:50:57', '2024-03-14 16:20:57', 54),
+(49, 16, 14, 21, 0, 0, 0, 0, 0, '2024-03-14 21:50:57', '2024-03-14 16:20:57', 51),
+(50, 16, 19, 17, 0, 0, 0, 0, 0, '2024-03-14 21:50:57', '2024-03-14 16:20:57', 53),
+(51, 17, 0, 0, 0, 0, 0, 0, 0, '2024-03-14 21:50:57', '2024-03-14 16:20:57', 55),
+(52, 17, 0, 0, 0, 0, 0, 0, 0, '2024-03-14 21:50:57', '2024-03-14 16:20:57', 55),
+(53, 17, 0, 0, 0, 0, 0, 0, 0, '2024-03-14 21:50:57', '2024-03-14 16:20:57', 56),
+(54, 17, 0, 0, 0, 0, 0, 0, 0, '2024-03-14 21:50:57', '2024-03-14 16:20:57', 55),
+(55, 18, 0, 0, 0, 0, 0, 0, 0, '2024-03-14 21:50:57', '2024-03-14 16:20:57', 57),
+(56, 18, 0, 0, 0, 0, 0, 0, 0, '2024-03-14 21:50:57', '2024-03-14 16:20:57', 57),
+(57, 19, 0, 0, 0, 0, 0, 0, 0, '2024-03-14 16:20:57', '2024-03-14 16:20:57', 0),
+(58, 20, 20, 18, 20, 18, 100, 90, 1, '2024-03-14 22:03:02', '2024-03-14 16:33:02', 66),
+(59, 20, 15, 11, 15, 11, 20, 10, 1, '2024-03-14 22:03:02', '2024-03-14 16:33:02', 67),
+(60, 20, 21, 22, 22, 21, 100, 190, 1, '2024-03-14 22:03:02', '2024-03-14 16:33:02', 65),
+(61, 20, 23, 19, 23, 19, 100, 90, 1, '2024-03-14 22:03:02', '2024-03-14 16:33:02', 64),
+(62, 20, 16, 12, 16, 12, 100, 80, 1, '2024-03-14 22:03:02', '2024-03-14 16:33:02', 67),
+(63, 20, 17, 14, 17, 14, 100, 70, 1, '2024-03-14 22:02:49', '2024-03-14 16:32:49', 64),
+(64, 21, 23, 17, 0, 0, 0, 0, 0, '2024-03-14 22:03:02', '2024-03-14 16:33:02', 68),
+(65, 21, 13, 22, 0, 0, 0, 0, 0, '2024-03-14 22:03:02', '2024-03-14 16:33:02', 68),
+(66, 21, 20, 24, 0, 0, 0, 0, 0, '2024-03-14 22:03:02', '2024-03-14 16:33:02', 69),
+(67, 21, 15, 16, 0, 0, 0, 0, 0, '2024-03-14 22:03:02', '2024-03-14 16:33:02', 68),
+(68, 22, 0, 0, 0, 0, 0, 0, 0, '2024-03-14 22:00:03', '2024-03-14 16:30:03', 70),
+(69, 22, 0, 0, 0, 0, 0, 0, 0, '2024-03-14 22:00:03', '2024-03-14 16:30:03', 70),
+(70, 23, 0, 0, 0, 0, 0, 0, 0, '2024-03-14 16:30:03', '2024-03-14 16:30:03', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `tournament_matches_schedule`
+--
+
+CREATE TABLE `tournament_matches_schedule` (
+  `id` int(11) NOT NULL,
+  `tournament_id` int(11) NOT NULL,
+  `schedule_date` date DEFAULT NULL,
+  `schedule_time` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `schedule_breaks` int(11) DEFAULT NULL,
+  `venue_availability` text COLLATE utf8_unicode_ci,
+  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `tournament_matches_schedule`
+--
+
+INSERT INTO `tournament_matches_schedule` (`id`, `tournament_id`, `schedule_date`, `schedule_time`, `schedule_breaks`, `venue_availability`, `created_at`, `updated_at`) VALUES
+(15, 50, '2024-04-12', '00:00', 0, 'dwdwdw', '2024-03-14 16:16:53', '2024-03-14 16:16:53'),
+(16, 50, '2024-05-24', '05:00', 0, 'dwdw', '2024-03-14 16:16:53', '2024-03-14 16:16:53'),
+(17, 50, '2024-06-19', '04:05', 2, 'dwdw', '2024-03-14 16:16:53', '2024-03-14 16:16:53');
 
 -- --------------------------------------------------------
 
@@ -5862,7 +5930,11 @@ INSERT INTO `tournament_rounds` (`id`, `tournament_id`, `user_id`, `type`, `roun
 (7, 19, 18, 'single', 4, 'completed', 'win', '2024-01-29 17:56:09', '2024-01-29 12:26:09'),
 (13, 21, 2, 'single', 1, 'completed', 'win', '2024-02-02 08:51:23', '2024-02-02 03:21:23'),
 (14, 21, 2, 'single', 2, 'completed', 'win', '2024-02-02 09:50:37', '2024-02-02 04:20:37'),
-(15, 21, 2, 'single', 3, 'completed', 'win', '2024-02-02 09:51:30', '2024-02-02 04:21:30');
+(15, 21, 2, 'single', 3, 'completed', 'win', '2024-02-02 09:51:30', '2024-02-02 04:21:30'),
+(20, 50, 30, 'single', 1, 'completed', 'win', '2024-03-14 22:02:49', '2024-03-14 16:32:49'),
+(21, 50, 30, 'single', 2, 'in_progress', 'win', '2024-03-14 16:30:03', '2024-03-14 16:30:03'),
+(22, 50, 30, 'single', 3, 'in_progress', 'win', '2024-03-14 16:30:03', '2024-03-14 16:30:03'),
+(23, 50, 30, 'single', 4, 'in_progress', 'win', '2024-03-14 16:30:03', '2024-03-14 16:30:03');
 
 -- --------------------------------------------------------
 
@@ -5896,7 +5968,9 @@ INSERT INTO `tournament_staff` (`id`, `tournament_id`, `contact`, `responsibilit
 (33, 45, 'Abida', 'Referees', '2024-03-12 19:17:09', '0000-00-00 00:00:00'),
 (40, 46, 'Abida', 'Referees', '2024-03-12 19:59:43', '0000-00-00 00:00:00'),
 (41, 47, 'Asifa', 'Referees', '2024-03-12 20:02:25', '0000-00-00 00:00:00'),
-(43, 48, 'Abida', 'Scorekeepers', '2024-03-12 21:35:00', '0000-00-00 00:00:00');
+(43, 48, 'Abida', 'Scorekeepers', '2024-03-12 21:35:00', '0000-00-00 00:00:00'),
+(44, 49, 'Abeeda', 'Referees', '2024-03-14 20:09:10', '0000-00-00 00:00:00'),
+(53, 50, 'Abeeda', 'Referees', '2024-03-14 21:46:53', '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -6402,6 +6476,12 @@ ALTER TABLE `tournament_matches`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `tournament_matches_schedule`
+--
+ALTER TABLE `tournament_matches_schedule`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `tournament_rounds`
 --
 ALTER TABLE `tournament_rounds`
@@ -6597,7 +6677,7 @@ ALTER TABLE `payments`
 -- AUTO_INCREMENT for table `personal_access_tokens`
 --
 ALTER TABLE `personal_access_tokens`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=84;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=96;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -6669,7 +6749,7 @@ ALTER TABLE `team_members`
 -- AUTO_INCREMENT for table `tournaments`
 --
 ALTER TABLE `tournaments`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT for table `tournament_categories`
@@ -6699,7 +6779,7 @@ ALTER TABLE `tournament_formats`
 -- AUTO_INCREMENT for table `tournament_images`
 --
 ALTER TABLE `tournament_images`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=221;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=245;
 
 --
 -- AUTO_INCREMENT for table `tournament_levels`
@@ -6711,19 +6791,25 @@ ALTER TABLE `tournament_levels`
 -- AUTO_INCREMENT for table `tournament_matches`
 --
 ALTER TABLE `tournament_matches`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=45;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+
+--
+-- AUTO_INCREMENT for table `tournament_matches_schedule`
+--
+ALTER TABLE `tournament_matches_schedule`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT for table `tournament_rounds`
 --
 ALTER TABLE `tournament_rounds`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `tournament_staff`
 --
 ALTER TABLE `tournament_staff`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=44;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
 
 --
 -- AUTO_INCREMENT for table `tournament_types`

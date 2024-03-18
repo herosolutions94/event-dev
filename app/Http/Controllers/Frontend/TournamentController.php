@@ -25,6 +25,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Str;
 use App\Models\Wishlist;
+use App\Models\Tournament_matches_schedule;
 
 class TournamentController extends Controller
 {
@@ -84,6 +85,16 @@ class TournamentController extends Controller
                 $teamsCount = $tournament->teams->count();
             }
             $tournament->staff_arr=DB::table('tournament_staff')->where('tournament_id',$tournament->id)->get();
+            $matches=array();
+            foreach($tournament->macthes_schedule as $match){
+                $matchObj=(Object)[];
+                $matchObj->schedule_date=$match->schedule_date;
+                $matchObj->schedule_time=$match->schedule_time;
+                $matchObj->schedule_breaks=$match->schedule_breaks;
+                $matchObj->venue_availability=$match->venue_availability;
+                $matches[]=$matchObj;
+            }
+            $tournament->matches=$matches;
             $staffArr=array();
             foreach($tournament->staff_arr as $staff_obj){
                 $staff=(Object)[];
@@ -1576,10 +1587,15 @@ class TournamentController extends Controller
         // $data = $request->all();
         $data = $request->except(['staff_arr']);
         $staff_arr=$request->input("staff_arr",null);
+        $matches=$request->input("matches",null);
         $staff_data=array();
         if(!empty($staff_arr)){
             $staff_data=json_decode($staff_arr);
         }
+        if(!empty($matches)){
+            $matches=json_decode($matches);
+        }
+        // print_r($matches);die;
         if ($request->hasFile('tournament_logo')) {
                 $tournament_logo=$data['tournament_logo'];
                 $tournament_logo = $tournament_logo->store('uploads', 'public');
@@ -1628,6 +1644,16 @@ class TournamentController extends Controller
                 );
                 DB::table('tournament_staff')->insert($s_data);
             }
+            foreach($matches as $match){
+                $m_data=array(
+                    'tournament_id'=>$tournament->id,
+                    'schedule_date'=>date('Y-m-d',strtotime($match->schedule_date)),
+                    'schedule_time'=>$match->schedule_time,
+                    'schedule_breaks'=>$match->schedule_breaks,
+                    'venue_availability'=>$match->venue_availability,
+                );
+                Tournament_matches_schedule::create($m_data);
+            }
             return response()->json(
                 [
                     'message' => 'Tournament saved successfully',
@@ -1644,12 +1670,17 @@ class TournamentController extends Controller
                 
                 $data = $request->except(['staff_arr']);
                 $staff_arr=$request->input("staff_arr",null);
+                $matches=$request->input("matches",null);
                 $banner_arr=$request->input("banner_arr",null);
                 $documents_arr=$request->input("documents_arr",null);
                 $logos_arr=$request->input("logos_arr",null);
                 $staff_data=array();
                 if(!empty($staff_arr)){
                     $staff_data=json_decode($staff_arr);
+                }
+                $matches_Arr=array();
+                if(!empty($matches)){
+                    $matches_Arr=json_decode($matches);
                 }
                 if(!empty($banner_arr)){
                     $banner_data=json_decode($banner_arr);
@@ -1708,6 +1739,20 @@ class TournamentController extends Controller
                                 'responsibility'=>$staff->responsibility,
                             );
                             DB::table('tournament_staff')->insert($s_data);
+                        }
+                    }
+                    // print_r($matches_Arr);die;
+                    if(!empty($matches_Arr)){
+                        Tournament_matches_schedule::where('tournament_id', $tournament->id)->delete();
+                        foreach($matches_Arr as $match){
+                            $m_data=array(
+                                'tournament_id'=>$tournament->id,
+                                'schedule_date'=>date('Y-m-d',strtotime($match->schedule_date)),
+                                'schedule_time'=>$match->schedule_time,
+                                'schedule_breaks'=>$match->schedule_breaks,
+                                'venue_availability'=>$match->venue_availability,
+                            );
+                            Tournament_matches_schedule::create($m_data);
                         }
                     }
                     if(!empty($banner_data)){

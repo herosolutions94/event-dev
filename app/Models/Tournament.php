@@ -116,6 +116,9 @@ class Tournament extends Model
     public function rounds(){
         return $this->hasMany(TournamentRounds::class,'tournament_id','id')->orderBy('id', 'asc');;
     }
+    public function macthes_schedule(){
+        return $this->hasMany(Tournament_matches_schedule::class,'tournament_id','id')->orderBy('id', 'asc');;
+    }
     public function descRounds(){
         return $this->hasMany(TournamentRounds::class,'tournament_id','id')->orderBy('id', 'desc');;
     }
