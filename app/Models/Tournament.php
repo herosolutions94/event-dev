@@ -66,7 +66,8 @@ class Tournament extends Model
         "pending_match_teams",
         "sponsors",
         "bank_information",
-        "tournament_logo"
+        "tournament_logo",
+        "is_bracket_generated"
     ];
 
     public function images()
@@ -126,6 +127,13 @@ class Tournament extends Model
     {
         return $this->hasOne(TournamentRounds::class, 'tournament_id', 'id')
                     ->where('status', 'in_progress')
+                    ->latest() // You might want to order by the latest round first
+                    ->limit(1);
+    }
+    public function firstRound()
+    {
+        return $this->hasOne(TournamentRounds::class, 'tournament_id', 'id')
+                    ->where('round_no', 1)
                     ->latest() // You might want to order by the latest round first
                     ->limit(1);
     }

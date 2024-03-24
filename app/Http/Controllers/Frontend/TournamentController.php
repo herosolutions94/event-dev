@@ -449,93 +449,97 @@ class TournamentController extends Controller
                 $single_brackets=array();
                 $match_rounds=$tournament->descRounds;
                 foreach($match_rounds as $r_index=>$match_round){
-
-                    $match_round->matches=$match_round->matches;
-                    foreach($match_round->matches as $m_key=>$match){
-                        $match_round_obj=(Object)[];
-                        $match_round_obj->id=$match->id;
-                        // if($r_index!=0){
-                        //     $match_round_obj->nextMatchId=TournamentMatches::where('id', '>', $match->id)
-                        //         ->orderBy('id', 'asc')
-                        //         ->value('id');
-                        // }
-                        // else{
-                        //     $match_round_obj->nextMatchId=null;
-                        // }
-                        $match_round_obj->nextMatchId=$match->next_match_id;
-                        
-                        $match_round_obj->tournamentRoundText=strval($match_round->round_no);
-                        if($match->status==1){
-                            $match_round_obj->state='PLAYED';
-                        }
-                        else if(!empty($match->team1) && !empty($match->team2)){
-                            $match_round_obj->state='RUNNING';
-                        }
-                        else{
-                            $match_round_obj->state='NO_SHOW';
-                        }
-
-                        
-                        $participants=array();
-                        
-                        $team_a=(Object)[];
-                        if(!empty($match->team1)){
-                            $team_a->id=$match->team_1->id;
-                            if(!empty($match->winner)){
-                                $team_a->resultText=$match->team1==$match->winner ? 'Won' : 'Lost';
+                    if($match_round->round_no!=1){
+                        $match_round->matches=$match_round->matches;
+                        foreach($match_round->matches as $m_key=>$match){
+                            $match_round_obj=(Object)[];
+                            $match_round_obj->id=$match->id;
+                            $match_round_obj->nextMatchId=$match->next_match_id;
+                            
+                            $match_round_obj->tournamentRoundText=strval($match_round->round_no);
+                            if($match->status==1){
+                                $match_round_obj->state='PLAYED';
+                            }
+                            else if(!empty($match->team1) && !empty($match->team2)){
+                                $match_round_obj->state='RUNNING';
                             }
                             else{
+                                $match_round_obj->state='NO_SHOW';
+                            }
+
+                            
+                            $participants=array();
+                            
+                            $team_a=(Object)[];
+                            if(!empty($match->team1)){
+                                $team_a->id=$match->team_1->id;
+                                if(!empty($match->winner)){
+                                    $team_a->resultText=$match->team1==$match->winner ? 'Won' : 'Lost';
+                                }
+                                else{
+                                    $team_a->resultText=null;
+                                }
+                                $team_a->isWinner=$match->team1==$match->winner ? true : false;
+                                $team_a->status=$match->status==1 ? "PLAYED" : null;
+                                $team_a->name=$match->team_1->team_name;
+                                $team_a->picture=url('/storage/'.$match->team_1->logo); 
+                            }
+                            else{
+                                $team_a->id=0;
                                 $team_a->resultText=null;
-                            }
-                            $team_a->isWinner=$match->team1==$match->winner ? true : false;
-                            $team_a->status=$match->status==1 ? "PLAYED" : null;
-                            $team_a->name=$match->team_1->team_name;
-                            $team_a->picture=url('/storage/'.$match->team_1->logo); 
-                        }
-                        else{
-                            $team_a->id=0;
-                            $team_a->resultText=null;
-                            $team_a->isWinner=false;
-                            $team_a->status=$match->status==1 ? "PLAYED" : null;
-                            $team_a->name='TBD';
-                            $team_a->picture=null; 
-                        }
-                        
-                        $participants[]=$team_a;
-
-                        $team_b=(Object)[];
-                        if(!empty($match->team2)){
-                            $team_b->id=$match->team_2->id;
-                            if(!empty($match->winner)){
-                                $team_b->resultText=$match->team2==$match->winner ? 'Won' : 'Lost';
-                            }
-                            else{
-                                $team_b->resultText=null;
+                                $team_a->isWinner=false;
+                                $team_a->status=$match->status==1 ? "PLAYED" : null;
+                                $team_a->name='TBD';
+                                $team_a->picture=null; 
                             }
                             
-                            $team_b->isWinner=$match->team2==$match->winner ? true : false;
-                            $team_b->status=$match->status==1 ? "PLAYED" : null;
-                            $team_b->name=$match->team_2->team_name;
-                            $team_b->picture=url('/storage/'.$match->team_2->logo);
-                             
-                        }
-                        else{
-                            $team_b->id=0;
-                            $team_b->resultText=null;
-                            $team_b->isWinner=false;
-                            $team_b->status=$match->status==1 ? "PLAYED" : null;
-                            $team_b->name='TBD';
-                            $team_b->picture=null; 
-                        }
-                        $participants[]=$team_b; 
-                        
+                            $participants[]=$team_a;
 
-                        $match_round_obj->participants=$participants;
+                            $team_b=(Object)[];
+                            if(!empty($match->team2)){
+                                $team_b->id=$match->team_2->id;
+                                if(!empty($match->winner)){
+                                    $team_b->resultText=$match->team2==$match->winner ? 'Won' : 'Lost';
+                                }
+                                else{
+                                    $team_b->resultText=null;
+                                }
+                                
+                                $team_b->isWinner=$match->team2==$match->winner ? true : false;
+                                $team_b->status=$match->status==1 ? "PLAYED" : null;
+                                $team_b->name=$match->team_2->team_name;
+                                $team_b->picture=url('/storage/'.$match->team_2->logo);
+                                 
+                            }
+                            else{
+                                $team_b->id=0;
+                                $team_b->resultText=null;
+                                $team_b->isWinner=false;
+                                $team_b->status=$match->status==1 ? "PLAYED" : null;
+                                $team_b->name='TBD';
+                                $team_b->picture=null; 
+                            }
+                            $participants[]=$team_b; 
+                            
 
-                        $single_brackets[]=$match_round_obj;
+                            $match_round_obj->participants=$participants;
+
+                            $single_brackets[]=$match_round_obj;
+                        } 
                     }
+                    
                 }
                 $tournament->single_brackets=$single_brackets;
+                if($tournament->firstRound){
+                    $tournament->firstRound=$tournament->firstRound;
+                    $tournament->firstRound->matches=$tournament->firstRound->matches;
+                    foreach($tournament->firstRound->matches as $m_key=>$match){
+                        $match->team_1=$match->team_1;
+                        $match->team_2=$match->team_2;
+                        $match->winner_row=$match->winner_row;
+                    }
+                }
+                
             }
 
             return response()->json([
@@ -972,6 +976,7 @@ class TournamentController extends Controller
                             ->where('status', 'in_progress')
                             ->orderBy('id', 'asc')
                             ->first()){
+                            Tournament::where('id',$tournament->id)->update(array('is_bracket_generated'=>1));
                             // print_r($latestRound);die;
                             $latestRoundMatchIds=array();
                             if($latestCompletedRound = TournamentRounds::where('tournament_id', $tournament->id)
