@@ -62,6 +62,8 @@ class TournamentController extends Controller
         ->where('is_active', 1)
         ->where('id', $request->id)
         ->first()){
+
+            // print_r($tournament->tournament_type);die;
             $tournament->second_match_breaks_val=$tournament->second_match_breaks;
             $tournament->schedule_date=!empty($tournament->schedule_date) ? date('Y-m-d',strtotime($tournament->schedule_date)) : "";
             $tournament->second_match_date=!empty($tournament->second_match_date) ? date('Y-m-d',strtotime($tournament->second_match_date)) : "";
@@ -541,7 +543,7 @@ class TournamentController extends Controller
                 }
                 
             }
-
+            $tournament->tournament_type_val=$tournament->tournament_type;
             return response()->json([
                 'data' => $tournament,
                 'teamsCount' => $teamsCount,
@@ -1606,6 +1608,9 @@ class TournamentController extends Controller
                 $tournament_logo = $tournament_logo->store('uploads', 'public');
                 $data['tournament_logo']=$tournament_logo;
         }
+        $data['updated_at']=date('Y-m-d H:i:s');
+        $data['lat']=json_decode($data['lat']);
+        $data['long']=json_decode($data['long']);
         // print_r($data);die;
         $tournament = Tournament::create($data);
         
@@ -1661,6 +1666,7 @@ class TournamentController extends Controller
             }
             return response()->json(
                 [
+                    'status'=>1,
                     'message' => 'Tournament saved successfully',
                     'tournament_id' => $tournament->id
                 ], 
@@ -1671,7 +1677,7 @@ class TournamentController extends Controller
     public function update_tournament(Request $request,$id){
         
         if(!empty($request->user_id) && $user = User::where('id', $request->user_id)->first()){
-            if(!empty($id) && $tournament=Tournament::where('id', $id)->where('user_id', $request->user_id)->where('is_started',0)->get()->first()){
+            if(!empty($id) && $tournament=Tournament::where('id', $id)->where('user_id', $request->user_id)->get()->first()){
                 
                 $data = $request->except(['staff_arr']);
                 $staff_arr=$request->input("staff_arr",null);
@@ -1701,6 +1707,9 @@ class TournamentController extends Controller
                     $tournament_logo = $tournament_logo->store('uploads', 'public');
                     $data['tournament_logo']=$tournament_logo;
                 }
+                $data['lat']=json_decode($data['lat']);
+                $data['long']=json_decode($data['long']);
+                // print_r($data);die;
                 $tournament->update($data);
                 // print_r($tournament);die;
                 if ($request->hasFile('logos')) {
@@ -1796,13 +1805,17 @@ class TournamentController extends Controller
                     return response()->json(
                         [
                             'message' => 'Tournament updated successfully',
+                            'status' => 1,
                             'tournament_id' => $tournament->id
                         ], 
                     200);
                 }
             }
+            else{
+                return response()->json(['message' => 'Invalid tournament request!'], 200);
+            }
         }
-        return response()->json(['message' => 'Something went wrong'], 400);
+        return response()->json(['message' => 'invalid user!'], 200);
     }
     // update tournament
     public function update(Request $request, $id){
