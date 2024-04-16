@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\FaqController;
 use App\Http\Controllers\Admin\TournamentController;
 use App\Http\Controllers\Admin\ContactUsController;
+use App\Http\Controllers\Admin\TransactionsController;
 use App\Http\Controllers\Admin\BookingController;
 use App\Http\Controllers\Admin\TournamentTypeController;
 use App\Http\Controllers\Admin\TournamentFormatController;
@@ -129,6 +130,10 @@ Route::group(['prefix' => 'admin', 'as' => 'admin.'], function () {
         Route::group(['prefix' => 'contactus', 'as' => 'contactus.'], function () {
             Route::get('index', [ContactUsController::class, 'index'])->name('index'); 
             Route::get('delete/{id}', [ContactUsController::class, 'delete'])->name('destroy');
+        });
+        Route::group(['prefix' => 'transactions', 'as' => 'transactions.'], function () {
+            Route::get('index', [TransactionsController::class, 'index'])->name('index'); 
+            Route::get('delete/{id}', [TransactionsController::class, 'delete'])->name('destroy');
         });
 
         Route::group(['prefix' => 'bookings', 'as' => 'bookings.'], function () {

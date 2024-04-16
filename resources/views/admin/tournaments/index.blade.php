@@ -74,7 +74,7 @@
                                               
                                                     <div class="ms-5">
                                                         
-                                                        <a href="#"
+                                                        <a href="{{ route('admin.tournaments.show', $tournament->id) }}"
                                                             class="text-gray-800 text-hover-primary fs-5 fw-bold mb-1"
                                                             data-kt-ecommerce-category-filter="category_name">{{ $tournament->title }}</a>
                                                     
